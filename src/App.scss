@@ -13,6 +13,10 @@ body {
 
 .App {
   text-align: center;
+  /*height: 100vh;*/
+  .sections {
+    width: 100%;
+  }
 }
 
 .App-logo {
@@ -51,6 +55,10 @@ body {
 }
 
 /***********************NAV BAR*****************************************************/
+.navbar {
+  /*position: fixed;*/
+  /*top: O;*/
+}
 
 nav a.nav-link {
   /*font-weight: 500;*/
