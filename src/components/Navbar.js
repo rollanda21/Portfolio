@@ -1,8 +1,10 @@
 import React from "react"
 /*import logo from "../logo.png"*/
+/*import "./navbar.scss";*/
 /* ***********************REACT FONT AWESOME IMPORTS ********************/
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+
 
 
 const Navbar = () => {
@@ -28,6 +30,9 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Portfolio</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="#">Testimonials</a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Contact</a>
