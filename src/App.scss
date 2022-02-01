@@ -4,7 +4,7 @@
   --primary-white: #fff;
   --primary-orange: #ff4500;
   --primary-dark: rgb(255, 255, 255, 0);
-  --primary-red: #ff0000;
+  --primary-red: crimson;
 }
 
 body {
@@ -56,9 +56,12 @@ body {
 
 /***********************NAV BAR*****************************************************/
 .navbar {
+  
   /*position: fixed;*/
   /*top: O;*/
+  z-index: 2;
 }
+
 
 nav a.nav-link {
   /*font-weight: 500;*/
@@ -92,14 +95,34 @@ nav ul li {
 
 /*********************END NAVBAR LINKS**************************************************/
 
-/*****************************HEADER**********************************************/
 
-.header-wraper {
+
+/*****************************HEADER**********************************************/
+.section {
+  
   position: relative;
-  background: url(back.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   height: 140vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+
+.header-wraper {
+  
+  background: url(back.jpg) no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140vh;
+
+     
 }
 
 .main-info {
@@ -130,16 +153,109 @@ nav ul li {
 
 /***************************** END HEADER**********************************************/
 
-/*****************************PORTFOLIO SECTION**********************************************/
+/*********************ABOUT*****************************************************/
+.about {
+  @extend .section;
+  background-color: var(--primary-white);
+  display: flex;
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+    /*background-color: darkcyan ;*/
 
+    .imgContainer {
+      widows: 700px;
+      height: 700px;
+      background-color: var(--primary-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      
+    }
+    img {
+      height: 90%;
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    .about-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+
+      h1 {
+          font-size: 50px;
+      }
+      h2 {
+        font-size: 50px;
+      }
+      h3 {
+        font-size: 30px;
+        span {
+          font-size: inherit;
+          color: var(--primary-red);
+        }
+      }
+      a {
+        position: absolute;
+        img {
+          width: 30px;
+          animation: arrowBlink 2s infinite;
+        }
+        @keyframes arrowBlink {
+          
+          100% {
+            opacity: O;
+          }
+        }
+      }
+    }
+  }
+}
+/*****************************END ABOUT**********************************************/
+
+
+/*****************************PORTFOLIO SECTION**********************************************/
+.portfolio {
+  background-color: lightseagreen !important;
+  @extend .section;
+  
+}
 /*****************************END PORTFOLIO SECTION******************************************/
 
-/*************************************TESTIMONIALS**************************************************/
+/*****************************SERVICES SECTION**********************************************/
+.services {
+  background-color: lightgreen !important;
+  @extend .section;
+  
+}
+/*****************************END SERVICES SECTION******************************************/
 
+/*************************************TESTIMONIALS**************************************************/
+.testimonials {
+  @extend .section;
+  background-color: lightcoral;
+  
+}
 /**************************************END TESTIMONIALS**********************************************/
+
+/*************************************WORKS**************************************************/
+.works {
+  @extend .section;
+  background-color: lightpink;
+  
+}
+/**************************************END WORKS**********************************************/
 
 /*************************************CONTACT**************************************************/
 .contact {
+  @extend .section;
   background-color: lightblue;
 }
 /**************************************END CONTACT**********************************************/
