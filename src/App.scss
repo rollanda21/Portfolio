@@ -158,23 +158,30 @@ nav ul li {
   @extend .section;
   background-color: var(--primary-white);
   display: flex;
+  background-color: lightcoral;
   .left {
     flex: 0.5;
     overflow: hidden;
     /*background-color: darkcyan ;*/
+    
 
     .imgContainer {
-      widows: 700px;
-      height: 700px;
-      background-color: var(--primary-red);
+      width: 500px;
+      height: 500px;
+      /*background-color: var(--primary-red);*/
+      background-image: none;
       border-radius: 50%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
+      margin-left: 120px;
       
     }
     img {
-      height: 90%;
+      
+      border-radius: 50%;
+      width: 400px;
+      height: 500px;
     }
   }
   .right {
@@ -223,8 +230,31 @@ nav ul li {
 
 /*****************************PORTFOLIO SECTION**********************************************/
 .portfolio {
-  background-color: lightseagreen !important;
+  background-color: var(--primary-white);
   @extend .section;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-style: 5Opx;
+
+  }
+
+  ul {
+    margin: 10px;
+    padding: O;
+    list-style: none;
+    display: flex;
+    
+    li {
+      font-size: 12px;
+      margin-right: 5px;
+      padding: 0.7px;
+      border-radius: 10px;
+    }
+
+  }
   
 }
 /*****************************END PORTFOLIO SECTION******************************************/

@@ -2,13 +2,14 @@ import React from 'react'
 import Typed from "react-typed"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+const profile = require('../images/profile.jpg');
 
 function About() {
     return (
         <div className="about" id="about">
             <div className="left">
                 <div className="imgContainer">
-                    <img src="" alt=""/>
+                    <img src={profile} alt=""/>
                 </div>
             </div>
 
