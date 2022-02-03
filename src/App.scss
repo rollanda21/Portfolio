@@ -4,7 +4,7 @@
   --primary-white: #fff;
   --primary-orange: #ff4500;
   --primary-dark: rgb(255, 255, 255, 0);
-  --primary-red: #ff0000;
+  --primary-red: crimson;
 }
 
 body {
@@ -13,6 +13,10 @@ body {
 
 .App {
   text-align: center;
+  /*height: 100vh;*/
+  .sections {
+    width: 100%;
+  }
 }
 
 .App-logo {
@@ -51,6 +55,13 @@ body {
 }
 
 /***********************NAV BAR*****************************************************/
+.navbar {
+  
+  /*position: fixed;*/
+  /*top: O;*/
+  z-index: 2;
+}
+
 
 nav a.nav-link {
   /*font-weight: 500;*/
@@ -84,14 +95,34 @@ nav ul li {
 
 /*********************END NAVBAR LINKS**************************************************/
 
-/*****************************HEADER**********************************************/
 
-.header-wraper {
+
+/*****************************HEADER**********************************************/
+.section {
+  
   position: relative;
-  background: url(back.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   height: 140vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+
+.header-wraper {
+  
+  background: url(back.jpg) no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140vh;
+
+     
 }
 
 .main-info {
@@ -122,16 +153,193 @@ nav ul li {
 
 /***************************** END HEADER**********************************************/
 
-/*****************************PORTFOLIO SECTION**********************************************/
+/*********************ABOUT*****************************************************/
+.about {
+  @extend .section;
+  background-color: var(--primary-white);
+  display: flex;
+  background-color: var(--primary-white);
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+    /*background-color: darkcyan ;*/
+    
 
+    .imgContainer {
+      width: 500px;
+      height: 500px;
+      /*background-color: var(--primary-red);*/
+      background-image: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-left: 120px;
+      
+    }
+    img {
+      
+      border-radius: 50%;
+      width: 400px;
+      height: 500px;
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    .about-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+
+      h1 {
+          font-size: 50px;
+      }
+      h2 {
+        font-size: 50px;
+      }
+      h3 {
+        font-size: 30px;
+        span {
+          font-size: inherit;
+          color: var(--primary-red);
+        }
+      }
+      a {
+        position: absolute;
+        img {
+          width: 30px;
+          animation: arrowBlink 2s infinite;
+        }
+        @keyframes arrowBlink {
+          
+          100% {
+            opacity: O;
+          }
+        }
+      }
+    }
+  }
+}
+/*****************************END ABOUT**********************************************/
+
+
+/*****************************PORTFOLIO SECTION**********************************************/
+.portfolio {
+  background-color: var(--primary-white);
+  @extend .section;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-style: 5Opx;
+
+  }
+
+  ul {
+    margin: 10px;
+    padding: O;
+    list-style: none;
+    display: flex;
+    
+    li {
+      font-size: 16px;
+      margin-right: 50px;
+      padding: 7px;
+      border-radius: 10px;
+      color: black;
+      &.active {
+        background-color: var(--primary-red);
+      }
+      /*background-color: var(--primary-red);*/
+      
+      
+      cursor: pointer;
+    }
+
+  }
+  .container {
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+
+    .item {
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      margin: 10px 20px 30px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-white);
+      position: relative;
+      transition: all .5s ease;
+      cursor: pointer;
+
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        align-items: center;
+        display: flex;
+        
+
+      }
+      img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+        z-index: 1;
+        
+      }
+      &:hover {
+        background-color: var(--primary-red);
+        img {
+          opacity: 0.2;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  
+}
 /*****************************END PORTFOLIO SECTION******************************************/
 
-/*************************************TESTIMONIALS**************************************************/
+/*****************************SERVICES SECTION**********************************************/
+.services {
+  background-color: lightgreen !important;
+  @extend .section;
+  
+}
+/*****************************END SERVICES SECTION******************************************/
 
+/*************************************TESTIMONIALS**************************************************/
+.testimonials {
+  @extend .section;
+  background-color: lightcoral;
+  
+}
 /**************************************END TESTIMONIALS**********************************************/
+
+/*************************************WORKS**************************************************/
+.works {
+  @extend .section;
+  background-color: lightpink;
+  
+}
+/**************************************END WORKS**********************************************/
 
 /*************************************CONTACT**************************************************/
 .contact {
+  @extend .section;
   background-color: lightblue;
 }
 /**************************************END CONTACT**********************************************/
