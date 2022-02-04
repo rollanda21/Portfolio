@@ -313,6 +313,123 @@ nav ul li {
 }
 /*****************************END PORTFOLIO SECTION******************************************/
 
+/*************************************WORKS**************************************************/
+.works {
+  @extend .section;
+  background-color: var(--primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .arrow {
+    height: 60px;
+    position: absolute;
+
+    &.left {
+      height: 90px;
+      left: 100px;
+      cursor: pointer;
+    }
+    &.right {
+      height: 90px;
+      right: 100px;
+      cursor: pointer;
+    }
+  }
+
+  .slider {
+    height: 400px;
+    display: flex;
+    position: absolute;
+    
+
+    .container {
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      
+
+      .item {
+        width: 800px;
+        height: 100%;
+        left: 0;
+        background-color: var(--primary-white);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .left {
+          flex: 4;
+          height: 100%;
+          display: flex;
+          /*background-color: yellow;*/
+          align-items: center;
+          justify-content: center;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+
+          .leftContainer {
+            width: 90%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+
+            .imgContainer {
+              width: 70px;
+              height: 70px;
+              border-radius: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+            }
+
+            h2 {
+              font-size: 30px;
+            }
+            p {
+              font-size: 20px;
+            }
+            span {
+              font-size: 17px;
+              font-weight: 500;
+              text-decoration: underline;
+              cursor: pointer;
+            } 
+          }
+        }
+
+        .right {
+          flex: 8;
+          height: 100%;
+          display: flex;
+          
+          align-items: center;
+          justify-content: center;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          overflow: hidden;
+
+          img {
+            width: 400px;
+          }
+          
+        }
+      }
+    }
+  }
+
+  
+  
+}
+/**************************************END WORKS**********************************************/
+
 /*****************************SERVICES SECTION**********************************************/
 .services {
   background-color: lightgreen !important;
@@ -329,13 +446,6 @@ nav ul li {
 }
 /**************************************END TESTIMONIALS**********************************************/
 
-/*************************************WORKS**************************************************/
-.works {
-  @extend .section;
-  background-color: lightpink;
-  
-}
-/**************************************END WORKS**********************************************/
 
 /*************************************CONTACT**************************************************/
 .contact {
