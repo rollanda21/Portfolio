@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+/* Mixin declarations*/
+@mixin center_items ($flex-direction: column, $just-content: center) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $flex-direction;
+}
+
+
+:root {
+  --primary-white: #fff;
+  --primary-orange: #ff4500;
+  --primary-dark: rgb(255, 255, 255, 0);
+  --primary-red: crimson;
+}
+
+body {
+  font-family: "Roboto Condensed" sans-serif;
+}
+
+.App {
+  text-align: center;
+  /*height: 100vh;*/
+  .sections {
+    width: 100%;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  
+  @include center_items();
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/***********************NAV BAR*****************************************************/
+.navbar {
+  
+  /*position: fixed;*/
+  /*top: O;*/
+  z-index: 2;
+}
+
+
+nav a.nav-link {
+  /*font-weight: 500;*/
+  letter-spacing: 0.031rem;
+  cursor: pointer;
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  margin-right: 0.50rem;
+  margin-left: 0.50rem;
+  color: var(--primary-white) !important;
+  border-top: 0.188rem solid var(--primary-dark);
+}
+
+.navbar-brand {
+  /*max-width: 17.25rem;
+  padding: 0 !important;
+  height: 6rem !important;*/
+  color: var(--primary-white) !important;
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+  border-top: 0.188rem solid var(--primary-red);
+}
+
+
+/*********************END NAVBAR LINKS**************************************************/
+
+
+
+/*****************************HEADER**********************************************/
+.section {
+  
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+
+.header-wraper {
+  
+  background: url(back.jpg) no-repeat;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140vh;
+
+     
+}
+
+.main-info {
+  padding-top: 100px;
+  @include center_items();
+  text-align: center;
+  font-family: "Roboto Condensed" sans-serif;
+}
+
+.main-info h1 {
+  color: var(--primary-white);
+  text-transform: uppercase;
+}
+/************** TYPED TEXT******************/
+
+.typed-text {
+  font-size: 2rem;
+  color: var(--primary-white)
+}
+
+/***************************** END HEADER**********************************************/
+
+/*********************ABOUT*****************************************************/
+.about {
+  @extend .section;
+  background-color: var(--primary-white);
+  display: flex;
+  
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+    /*background-color: darkcyan ;*/
+    
+
+    .imgContainer {
+      width: 500px;
+      height: 500px;
+      /*background-color: var(--primary-red);*/
+      background-image: none;
+      border-radius: 50%;
+      @include center_items();
+      align-items: flex-end !important;
+      margin-left: 120px;
+      
+      
+    }
+    img {
+      
+      border-radius: 50%;
+      width: 400px;
+      height: 500px;
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    .about-wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+
+      h1 {
+          font-size: 50px;
+      }
+      h2 {
+        font-size: 50px;
+      }
+      h3 {
+        font-size: 30px;
+        span {
+          font-size: inherit;
+          color: var(--primary-red);
+        }
+      }
+      a {
+        position: absolute;
+        img {
+          width: 30px;
+          animation: arrowBlink 2s infinite;
+        }
+        @keyframes arrowBlink {
+          
+          100% {
+            opacity: O;
+          }
+        }
+      }
+    }
+  }
+}
+/*****************************END ABOUT**********************************************/
+
+
+/*****************************PORTFOLIO SECTION**********************************************/
+.portfolio {
+  background-color: var(--primary-white);
+  @extend .section;
+  @include center_items($just-content: none);
+  
+  h1 {
+    font-style: 5Opx;
+
+  }
+
+  ul {
+    margin: 10px;
+    padding: O;
+    list-style: none;
+    display: flex;
+    
+    li {
+      font-size: 16px;
+      margin-right: 50px;
+      padding: 7px;
+      border-radius: 10px;
+      color: black;
+      &.active {
+        background-color: var(--primary-red);
+      }
+      /*background-color: var(--primary-red);*/
+      
+      
+      cursor: pointer;
+    }
+
+  }
+  .container {
+    max-width: 1000px;
+    @include center_items($flex-direction: none);
+    flex-wrap: wrap;
+    
+
+    .item {
+      width: 200px;
+      height: 250px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      margin: 10px 20px 30px 0px;
+      @include center_items($flex-direction: none);
+      color: var(--primary-white);
+      position: relative;
+      transition: all .5s ease;
+      cursor: pointer;
+
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        @include center_items($flex-direction: none);        
+
+      }
+      img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+        z-index: 1;
+        
+      }
+      &:hover {
+        background-color: var(--primary-red);
+        img {
+          opacity: 0.2;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  
+}
+/*****************************END PORTFOLIO SECTION******************************************/
+
+/*************************************WORKS**************************************************/
+.works {
+  @extend .section;
+  background-color: var(--primary-red);
+  position: relative;
+  @include center_items($flex-direction: none);
+
+  .arrow {
+    height: 60px;
+    position: absolute;
+
+    &.left {
+      height: 90px;
+      left: 100px;
+      cursor: pointer;
+    }
+    &.right {
+      height: 90px;
+      right: 100px;
+      cursor: pointer;
+    }
+  }
+
+  .slider {
+    height: 400px;
+    display: flex;
+    position: absolute;
+    
+
+    .container {
+      width: 100vw;
+      @include center_items($flex-direction: none);      
+
+      .item {
+        width: 800px;
+        height: 100%;
+        left: 0;
+        background-color: var(--primary-white);
+        border-radius: 20px;
+        @include center_items($flex-direction: none);
+        
+        .left {
+          flex: 4;
+          height: 100%;
+          @include center_items($flex-direction: none);
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+
+          .leftContainer {
+            width: 90%;
+            height: 70%;
+            @include center_items($just-content: space-between);
+
+            .imgContainer {
+              width: 70px;
+              height: 70px;
+              border-radius: 50px;
+              @include center_items($flex-direction: none);
+            }
+
+            h2 {
+              font-size: 30px;
+            }
+            p {
+              font-size: 20px;
+            }
+            span {
+              font-size: 17px;
+              font-weight: 500;
+              text-decoration: underline;
+              cursor: pointer;
+            } 
+          }
+        }
+
+        .right {
+          flex: 8;
+          height: 100%;
+          @include center_items($flex-direction: none);
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          overflow: hidden;
+
+          img {
+            width: 400px;
+          }
+          
+        }
+      }
+    }
+  }
+
+  
+  
+}
+/**************************************END WORKS**********************************************/
+
+/*****************************SERVICES SECTION**********************************************/
+.services {
+  background-color: lightgreen !important;
+  @extend .section;
+  
+}
+/*****************************END SERVICES SECTION******************************************/
+
+/*************************************TESTIMONIALS**************************************************/
+.testimonials {
+  @extend .section;
+  background-color: rgb(245, 127, 127);
+  
+}
+/**************************************END TESTIMONIALS**********************************************/
+
+
+/*************************************CONTACT**************************************************/
+.contact {
+  @extend .section;
+  background-color: lightblue;
+}
+/**************************************END CONTACT**********************************************/
