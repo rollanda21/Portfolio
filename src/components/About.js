@@ -2,7 +2,7 @@ import React from 'react'
 import Typed from "react-typed"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
-const profile = require('../images/profile.jpg');
+const profile = require('../images/girl.jpg');
 
 function About() {
     return (
