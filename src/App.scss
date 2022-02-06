@@ -506,25 +506,23 @@ nav ul li {
 /*************************************CONTACT**************************************************/
 .contact {
   @extend .section;
-  background-color: lightsalmon;
+  
+  background-color: #333;
   display: flex;
 
-  .left {
-    flex: 1;
-    overflow: hidden;
-
-    img {
-      width: 600px;
-      height: 500px;
-    }
-  }
-  .right {
-    flex: 1;
+  
+  .container {
+    
     @include center_items($just-content: space-around);
+    
 
-    h2 {
+    h1 {
       @include h1();
       top: 0;
+      color: var(--primary-white);
+    }
+    h4 {
+      color: var(--primary-white);
     }
 
     form {
@@ -549,16 +547,7 @@ nav ul li {
         margin: 25px;
       }
 
-      button {
-        width: 150px;
-        height: 30px;
-        color: white;
-        background-color: var(--primary-red);
-        border: none;
-        border-radius: 10px;
-        font-weight: 500;
-        cursor: pointer;
-      }
+      
     }
   }
 }
