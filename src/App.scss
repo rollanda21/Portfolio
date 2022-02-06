@@ -234,20 +234,30 @@ nav ul li {
 
 /*****************************PORTFOLIO SECTION**********************************************/
 .portfolio {
-  background-color: var(--primary-white);
+  background-color: lightcoral;
   @extend .section;
-  @include center_items($just-content: none);
+  @include center_items();
+  padding-bottom: 30vw;
+  
+  
   
   h1 {
     @include h1();
+    margin-top: 30px;
+    
+    
 
   }
 
   ul {
+    width: 100%;
+    height: 90%;
     margin: 10px;
     padding: O;
     list-style: none;
-    display: flex;
+    @include center_items($flex-direction: none, $just-content: none);
+    /*display: flex;*/
+    
     
     li {
       font-size: 16px;
@@ -428,7 +438,7 @@ nav ul li {
     width: 100%;
     height: 90%;
     @include center_items($flex-direction: none);
-    padding-bottom: 20vw;
+    padding-bottom: 10vw;
     
 
     .card {
@@ -496,6 +506,60 @@ nav ul li {
 /*************************************CONTACT**************************************************/
 .contact {
   @extend .section;
-  background-color: lightblue;
+  background-color: lightsalmon;
+  display: flex;
+
+  .left {
+    flex: 1;
+    overflow: hidden;
+
+    img {
+      width: 600px;
+      height: 500px;
+    }
+  }
+  .right {
+    flex: 1;
+    @include center_items($just-content: space-around);
+
+    h2 {
+      @include h1();
+      top: 0;
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      padding-bottom: 20vw;
+      
+      @include center_items($just-content: space-between);
+
+      input {
+        width: 400px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 5px;
+        
+      }
+
+      textarea{
+        width: 400px;
+        height: 200px;
+        font-size: 15px;
+        margin: 25px;
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        color: white;
+        background-color: var(--primary-red);
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
 }
 /**************************************END CONTACT**********************************************/
