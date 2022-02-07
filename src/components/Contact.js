@@ -1,14 +1,17 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import emailjs from '@emailjs/browser';
 
 
 
 
 function Contact () {
+
+    const [message, setMessage] = useState(false);
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setMessage(true);
     
         emailjs.sendForm('service_5zobpti', 'template_f7v4soc', form.current, 'user_DSTbPrghazJ7RRma8cRQn')
           .then((result) => {
@@ -17,6 +20,8 @@ function Contact () {
               console.log(error.text);
           });
       };
+
+    
 
     return (
         <div className="contact" id="contact">
@@ -31,7 +36,7 @@ function Contact () {
 
                     <div className="col-sm-12">
 
-                        <h4 className="text-center">Hit me up width this form below, I will reply asap.</h4>
+                        <h4 className="text-center">Hit me up width this form below</h4>
                     </div>
                 </div>
                 <div className="row">
@@ -41,8 +46,15 @@ function Contact () {
                      <div className="mb-3"><textarea className="form-control" placeholder="Message" ></textarea></div>
                         
                         <button type="submit" className="btn btn-dark">SEND</button>
+                        
                      </form>
-                </div> 
+                     
+                </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        {message && <span className="text-center">Thank you for your message, I will reply asap.</span> }
+                    </div> 
+                </div>
                 
             </div>
             
