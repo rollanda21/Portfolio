@@ -11,9 +11,25 @@
 @mixin h1 () {
   font-size: 40px;
   text-transform: uppercase;
+  
 }
 
+.section {
+  
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140vh;
+  width: 100%;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 
+}
 :root {
   --primary-white: #fff;
   --primary-orange: #ff4500;
@@ -110,21 +126,7 @@ nav ul li {
 
 
 /*****************************HEADER**********************************************/
-.section {
-  
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  height: 140vh;
-  scroll-snap-type: mandatory;
-  scroll-snap-align: start;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  &::-webkit-scrollbar{
-    display: none;
-  }
 
-}
 
 .header-wraper {
   
@@ -505,50 +507,38 @@ nav ul li {
 
 /*************************************CONTACT**************************************************/
 .contact {
-  @extend .section;
+ /* @extend .section;*/
   
   background-color: #333;
   display: flex;
-
   
-  .container {
+  
+  .container-fluid {
     
-    @include center_items($just-content: space-around);
+    /*@include center_items($just-content: space-around);*/
     
-
     h1 {
       @include h1();
-      top: 0;
       color: var(--primary-white);
     }
     h4 {
       color: var(--primary-white);
     }
 
-    form {
-      width: 70%;
-      height: 70%;
-      padding-bottom: 20vw;
-      
-      @include center_items($just-content: space-between);
-
-      input {
-        width: 400px;
-        height: 30px;
-        font-size: 15px;
-        border-radius: 5px;
+    .row {
+      @include center_items();
+    
+      form {
+        width: 40%;
         
-      }
 
-      textarea{
-        width: 400px;
-        height: 200px;
-        font-size: 15px;
-        margin: 25px;
+        textarea {
+          height: 200px;
+        }
       }
-
-      
     }
+
+    
   }
 }
 /**************************************END CONTACT**********************************************/
